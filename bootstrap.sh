@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES_REPO=""
+DOTFILES_REPO="https://github.com/FiloCara/dotfiles.git"
 DOTFILES_DIR="$HOME/dotfiles"
 
 echo "Checking for prerequisites..."
