@@ -5,8 +5,6 @@ set -e
 DOTFILES_DIR="$HOME/dotfiles"
 TARGET_DIR="$HOME"
 
-EXCLUDE_FILES=("install.sh" "clean.sh" "bootstrap.sh" "Readme.md")
-
 # Function to create symlink, preserving the directory structure
 create_symlink() {
     local source_file="$1"
@@ -26,16 +24,19 @@ create_symlink() {
     echo "Created symlink: $target_file -> $source_file"
 }
 
-for file in "${EXCLUDE_FILES[@]}"; do
-    EXCLUDE_FIND_CMD+="! -name $file "
-done
-
 # Export the function so it's available in subshells
 export -f create_symlink
 export TARGET_DIR
+export DOTFILES_DIR
 
 # Find all files in the dotfiles directory and create corresponding symlinks
-find $DOTFILES_DIR -type f $EXCLUDE_FIND_CMD -exec bash -c 'create_symlink "$0" "$TARGET_DIR/${0#'$DOTFILES_DIR'/}"' {} \;
+find $DOTFILES_DIR -type f \
+    ! -name "install.sh" \
+    ! -name "clean.sh" \
+    ! -name "bootstrap.sh" \
+    ! -name "Readme.md" \
+    ! -path '*/.git/*' \
+    -exec bash -c 'create_symlink "$0" "'$TARGET_DIR'/${0#'$DOTFILES_DIR'/}"' {} \;
 
 echo "Symlinks creation completed."
 

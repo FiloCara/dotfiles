@@ -6,7 +6,7 @@ DOTFILES_DIR="$HOME/dotfiles"
 echo "Checking for prerequisites..."
 if ! command -v git &> /dev/null; then
     echo "Error: git is not installed. Please install git and try again."
-    exit 1  # Exit script if git is not installed
+    exit 1
 fi
 
 # Clone the dotfiles repository if it doesn't exist
