@@ -46,20 +46,17 @@ return require('packer').startup(function(use)
 
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
-        config = [[require('config.lualine')]],
+        requires = { 'nvim-tree/nvim-web-devicons' },
     }
 
     -- Telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
         requires = { 'nvim-lua/plenary.nvim' },
-        config = [[require('config.telescope')]],
     }
 
     -- Treesitter
     use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate",
-        config = [[require('config.treesitter')]],
     })
 
     -- Autocompletation
@@ -92,12 +89,13 @@ return require('packer').startup(function(use)
             "nvim-lua/plenary.nvim",         -- required
             "sindrets/diffview.nvim",        -- optional - Diff integration
         },
-        config = [[require('config.neogit')]],
     }
 
     use { "tpope/vim-fugitive" }
 
-    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    -- DAP integration
+    use { "mfussenegger/nvim-dap" }
+    use { "rcarriga/nvim-dap-ui", requires = {"nvim-neotest/nvim-nio"} }
     use { "jay-babu/mason-nvim-dap.nvim" }
 
     -- Automatically set up your configuration after cloning packer.nvim

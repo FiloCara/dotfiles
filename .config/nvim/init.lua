@@ -3,10 +3,10 @@ if vim.loader then
 	vim.loader.enable()
 end
 -- Credit to: https://martinlwx.github.io/en/config-neovim-from-scratch/
-require('options')
-require('plugins')
-require('keymaps')
-require('colorscheme')
-require('autocmp')
-require('lsp')
-require('dap')
+require('filo.options')
+require('filo.plugins')
+require('filo.keymaps')
+require('filo.colorscheme')
+require('filo.autocmp')
+require('filo.lsp')
+require('filo.dap')
