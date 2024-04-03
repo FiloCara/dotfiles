@@ -24,7 +24,7 @@ if [[ -n "$selected_project" ]]; then
     else
         # Create a new tmux session named after the project
         echo "Creating new session: $project_name"
-        tmux -vv new-session -ds "$project_name" -c "$selected_project"
+        tmux new-session -ds "$project_name" -c "$selected_project"
         # tmux select-window -t "$project_name"
         tmux attach -t "$project_name"
     fi
