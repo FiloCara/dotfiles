@@ -4,6 +4,7 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fm', builtin.man_pages, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>ft', builtin.builtin, {})
 
 require('telescope').setup{
   defaults = {
@@ -27,6 +28,9 @@ require('telescope').setup{
       man_pages = {
           sections = {"ALL"}
       },
+      builtin = {
+          previewer = false,
+      }
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
