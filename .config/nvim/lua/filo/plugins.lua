@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
 
     -- Colorscheme
     use { 'projekt0n/github-nvim-theme' , as = "github-theme"}
+    use { "rose-pine/neovim", as = "rose-pine" }
 
     use {
         'nvim-lualine/lualine.nvim',

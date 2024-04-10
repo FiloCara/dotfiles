@@ -1,4 +1,10 @@
-local colorscheme = 'github_dark'
+require("rose-pine").setup({
+    variant = "moon",
+    styles = {
+        italic = false
+    }
+})
+local colorscheme = 'rose-pine'
 
 local is_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not is_ok then
