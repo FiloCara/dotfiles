@@ -83,6 +83,8 @@ return require('packer').startup(function(use)
       }
     }
 
+    use { 'nvimtools/none-ls.nvim' }
+
     -- GIT integration
     use {
         "NeogitOrg/neogit",
