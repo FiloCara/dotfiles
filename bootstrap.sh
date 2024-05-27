@@ -14,7 +14,7 @@ install_software() {
         case $answer in
             [Yy]* )
                 echo "Installing $software_name..."
-                eval $install_command
+                eval $install_cmd
                 ;;
             * )
                 echo "$software_name will not be installed."
