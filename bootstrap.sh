@@ -9,7 +9,7 @@ install_software() {
 
     # Check if the software is not already installed
     if ! command -v $software_name &> /dev/null; then
-        read -p "Do you want to install $software_name? (y/n) " answer
+        read -p "Do you want to install $software_name? (y/n) " answer </dev/tty
         echo 
         case $answer in
             [Yy]* )
