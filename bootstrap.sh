@@ -20,6 +20,7 @@ install_software() {
                 echo "$software_name will not be installed."
                 ;;
         esac    
+    else "$software_name is already installed."
     fi
 }
 
