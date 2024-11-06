@@ -101,6 +101,12 @@ return require('packer').startup(function(use)
     use { "rcarriga/nvim-dap-ui", requires = {"nvim-neotest/nvim-nio"} }
     use { "jay-babu/mason-nvim-dap.nvim" }
 
+    -- Multi cursor
+    use { 
+        "mg979/vim-visual-multi", 
+        branch = 'master'
+    }
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     

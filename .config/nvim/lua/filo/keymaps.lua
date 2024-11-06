@@ -27,3 +27,23 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 vim.keymap.set("n", "n", "nzzzv", opts)
 vim.keymap.set("n", "N", "Nzzzv", opts)
 
+-- TODO add command to find non printable characters /[^\x00-\x7F]
+
+-- Set leader key to 'm' for visual-multi
+vim.g.VM_leader = 'm'
+-- Disable default mappings
+vim.g.VM_default_mappings = 0
+
+-- Start multi-cursor selection for the word under the cursor
+vim.api.nvim_set_keymap('n', 'm', '<Plug>(VM-Find-Under)', opts)
+vim.api.nvim_set_keymap('v', 'm', '<Plug>(VM-Find-Subword-Under)', opts)
+
+-- Use 'mj' and 'mk' to add a new cursor below and above
+vim.api.nvim_set_keymap('n', 'mj', '<Plug>(VM-Add-Cursor-Down)', opts)
+vim.api.nvim_set_keymap('n', 'mk', '<Plug>(VM-Add-Cursor-Up)', opts)
+vim.api.nvim_set_keymap('v', 'mj', '<Plug>(VM-Add-Cursor-Down)', opts)
+vim.api.nvim_set_keymap('v', 'mk', '<Plug>(VM-Add-Cursor-Up)', opts)
+
+-- Select all occurrences
+vim.api.nvim_set_keymap('n', 'ma', '<Plug>(VM-Select-All)', opts)
+
