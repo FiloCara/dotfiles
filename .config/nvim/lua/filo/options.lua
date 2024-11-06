@@ -46,6 +46,7 @@ vim.opt.smartcase = true            -- but make it case sensitive if an uppercas
 -- Netrw
 vim.g.netrw_banner = 0                 -- Remove banner 
 vim.g.netrw_keepdir = 0                -- allow moving to parent directory
+vim.g.netrw_liststyle = 3              -- Tree-like visualization
 vim.g.netrw_localcopydircmd = 'cp -r'  -- enable recursive copy
 
 --  TODO: better keybinding navigation: https://vonheikemen.github.io/devlog/tools/using-netrw-vim-builtin-file-explorer/
