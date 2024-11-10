@@ -35,7 +35,8 @@ vim.opt.cursorline = true           -- highlight cursor line underneath the curs
 vim.opt.splitbelow = true           -- open new vertical split bottom
 vim.opt.splitright = true           -- open new horizontal splits right
 vim.opt.termguicolors = true        -- enabl 24-bit RGB color in the TUI
-vim.opt.showmode = true             -- display the "-- INSERT --" mode hint
+vim.opt.showmode = false            -- Do not display the "-- INSERT --" mode hint
+vim.opt.scrolloff = 10              -- Minimal number of screen lines to keep above and below the cursor
 
 -- Searching
 vim.opt.incsearch = true            -- search as characters are entered
