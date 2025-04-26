@@ -7,8 +7,8 @@ export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 setopt auto_cd
 
-export PATH="/home/filo/.local/bin:$PATH"
-export PATH="/home/filo/.local/script:$PATH"
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/script:$PATH
 
 ### --------- History config -------------
 export HISTFILE=$HOME/.zsh_history
