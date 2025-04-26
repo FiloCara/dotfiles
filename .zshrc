@@ -28,6 +28,15 @@ setopt HIST_FIND_NO_DUPS
 # Ignore commands that start with space
 setopt HIST_IGNORE_SPACE
 
+# Expire duplicates first when trimming
+setopt HIST_EXPIRE_DUPS_FIRST
+
+# Remove extra spaces in commands before saving
+setopt HIST_REDUCE_BLANKS
+
+# Share commands between all open shells
+setopt SHARE_HISTORY
+
 ### ------------- ALIASES ---------------
 # Load aliases
 source $ZSH/aliases.zsh
