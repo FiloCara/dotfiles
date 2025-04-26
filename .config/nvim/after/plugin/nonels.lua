@@ -7,4 +7,5 @@ local sources = {
   -- web stuff
   nls.builtins.formatting.prettier
 }
-nls.setup({ sources = sources })
+-- TODO: throwing a lot of errors, need to be fixed
+-- nls.setup({ sources = sources })
