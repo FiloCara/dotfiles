@@ -2,7 +2,7 @@
 
 set -e
 
-DOTFILES_DIR="$HOME/dotfiles"
+DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 TARGET_DIR="$HOME"
 
 # Function to remove symlink, preserving the directory structure
@@ -23,5 +23,5 @@ find "$DOTFILES_DIR" -type f | while read dotfile; do
     remove_symlink "$target"
 done
 
-echo "Symlinks removal completed."
+echo "✅ Symlinks removal completed."
 

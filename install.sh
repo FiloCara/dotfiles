@@ -2,7 +2,7 @@
 
 set -e
 
-DOTFILES_DIR="$HOME/dotfiles"
+DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 TARGET_DIR="$HOME"
 
 # Function to create symlink, preserving the directory structure
@@ -38,5 +38,5 @@ find $DOTFILES_DIR -type f \
     ! -path '*/.git/*' \
     -exec bash -c 'create_symlink "$0" "'$TARGET_DIR'/${0#'$DOTFILES_DIR'/}"' {} \;
 
-echo "Symlinks creation completed."
+echo "✅ Symlinks creation completed."
 
