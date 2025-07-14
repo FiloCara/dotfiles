@@ -29,6 +29,11 @@ bindkey '^[[1;5D' backward-word
 # [Ctrl-r] - Search backward incrementally for a specified string
 bindkey '^r' history-incremental-search-backward
 
-# TODO [Ctrl-f] - fzf search
-# zle -N fzf-tmux-project-selector
+# [Ctrl-f] - Start fzf search
 bindkey -s '^f' 'tmux-sessionizer.sh\n'
+
+# [Ctrl-x-e] - Edit command line in editor
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
+

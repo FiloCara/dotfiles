@@ -1,6 +1,9 @@
 ### ZSH HOME 
 export ZSH=$HOME/.zsh
 
+### EDITOR
+export EDITOR=nvim
+
 ### XDG
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
