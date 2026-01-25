@@ -12,7 +12,7 @@ create_symlink() {
     
     # Ensure the target directory exists
     mkdir -p "$(dirname "$target_file")"
-    
+
     # Check if the target file already exists (could be a regular file or symlink)
     if [ -e "$target_file" ] || [ -L "$target_file" ]; then
         local backup_file="${target_file}.backup.$(date +%Y%m%d%H%M%S)"
@@ -30,13 +30,14 @@ export TARGET_DIR
 export DOTFILES_DIR
 
 # Find all files in the dotfiles directory and create corresponding symlinks
-find $DOTFILES_DIR -type f \
+find "$DOTFILES_DIR" -type f \
     ! -name "install.sh" \
     ! -name "clean.sh" \
     ! -name "bootstrap.sh" \
     ! -name "Readme.md" \
     ! -path '*/.git/*' \
-    -exec bash -c 'create_symlink "$0" "'$TARGET_DIR'/${0#'$DOTFILES_DIR'/}"' {} \;
+    -print0 | while IFS= read -r -d '' dotfile; do
+        create_symlink "$dotfile" "$TARGET_DIR/${dotfile#$DOTFILES_DIR/}"
+    done
 
 echo "✅ Symlinks creation completed."
-

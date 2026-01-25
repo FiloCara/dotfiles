@@ -18,10 +18,9 @@ remove_symlink() {
 
 # Find all files in the dotfiles directory
 # For each, attempt to remove a corresponding symlink in the home directory
-find "$DOTFILES_DIR" -type f | while read dotfile; do
+find "$DOTFILES_DIR" -type f -print0 | while IFS= read -r -d '' dotfile; do
     target="$TARGET_DIR/${dotfile#$DOTFILES_DIR/}"
     remove_symlink "$target"
 done
 
 echo "✅ Symlinks removal completed."
-
