@@ -9,4 +9,4 @@ curl -Ls https://raw.githubusercontent.com/FiloCara/dotfiles/main/bootstrap.sh |
 - `nvim`
 - `tmux`
 - `fzf` (optional)
-- `exa` (optional)
+- `eza` (optional)

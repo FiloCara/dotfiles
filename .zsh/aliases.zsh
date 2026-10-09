@@ -1,10 +1,10 @@
 ### LS
 alias ls="ls --color=auto"
 
-# Replace ls and la with exa
-if [ -x "$(command -v exa)" ]; then
-    alias ls="exa"
-    alias la="exa --long --all --group"
+# Replace ls and la with eza
+if [ -x "$(command -v eza)" ]; then
+    alias ls="eza"
+    alias la="eza --long --all --group"
 fi
 
 ### GREP
